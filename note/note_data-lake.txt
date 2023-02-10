@@ -1,0 +1,29 @@
+what is data lake? 
+
+data lake is a central repository that hold big data from many sources,it generally the data can be structured,semi-structured or unstructured.
+
+in generally a data lake is an unstructured data
+
+it the target users are data scientists or data analysts
+
+it stores huge amount of data
+
+sometimes in the size of petabytes or terabytes
+
+the use cases which are covered by data lake are basically stream processing machine learning and real-time analytics  on the data veda side the data is generally structured.
+
+etl is a data warehouse solution whereas elt is a data lake solution
+
+the idea of an etl is schema on right that you define a well-defined schema you define the relationships and then you write the data
+
+where elt is based upon schema on read where you write the data first and determine the schema on the read
+
+data lake also becomes useless when there is not a possibility to join different data sets 
+
+generally that becomes because there is no foreign key available or there is no other possibility to join different data sets
+
+manfaat ada nya data lake ialah 
+
+1. menggabungkan banyak data yang berbeda menjadi satu set. 
+2. ada pola yang sama dari data yang berbeda.
+3. data lake harus bisa membentuk skema dari banyak data yang berbeda beda bentuknya.

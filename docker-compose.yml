@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+    postgresqldb:
+      image: postgres:14
+      restart: always
+      environment:
+        - POSTGRES_USER=root
+        - POSTGRES_PASSWORD=root
+        - POSTGRES_DB=zoom_camp
+      ports:
+        - 5429:5432
+      networks:
+        - backend
+      volumes:
+        - ./db:/var/lib/postgresql/data:rw
+
+networks:
+  backend:
+    external: True

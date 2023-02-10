@@ -1,0 +1,55 @@
+ workflow orchestration means governing your data flow in a way that respects orchestration rules and your business logic now
+
+ data flow is what binds and otherwise disparate set of applications together
+
+ workflow orchestration tool is going to allow you to turn any code into a workflow that you can schedule, run and observe
+
+ Workflow orchestration is focused on the efficiency of business processes, while data orchestration is focused on the quality and accuracy of data.
+
+Workflow orchestration is the process of automating and coordinating the steps in a business process. 
+
+Data orchestration, on the other hand, is the process of managing the data used in a workflow. 
+
+These two concepts are often confused, but they are actually quite different. 
+
+Workflow orchestration is about automating the steps in a process, while data orchestration is about managing the data used in a workflow.
+
+While both workflow and data orchestration are important for businesses, they serve different purposes. 
+
+Workflow orchestration is focused on the efficiency of business processes, while data orchestration is focused on the quality and accuracy of data.
+
+workflow orchestration merupakan membuat algoritma berjalan dengan otomatis sesuai dengan waktu yang telah ditentukan pada proses bisnis.
+
+data orchestration merupakan  mengelola serta mengkoordinasikan data dari banyak sumber menjadi data yang dapat dipakai dalam proses bisnis.
+
+data orchestration fokus untuk nyiapin data buat bisnis,sementara workflow orchestration menyusun algoritma bedasarkan proses bisnis secara efisien dan dijalankan secara otomatis.
+
+data orchestration hanya nyiapin data tetapi tidak secara otomatis.
+
+kalau nyiapin data secara otomatis disebut data flow orchestration
+
+so Data flow orchestration tools automate data flow management within a system
+
+bedanya workflow dan data,workflow itu task atau alur kerjanya sementara data itu bahan yang diperlukan.
+
+tanpa tugas atau alur kerja kita ngga bisa ngapain,tapi tanpa data kita tidak bisa mengelola apapun.
+
+intinya workflow orchestration itu menjalankan sebuah alur kerja ataupun lebih dari satu alur kerja secara otomatis.
+
+intinya data orchestration itu mengelola data supaya bisa digunakan, dan kalau mau mengelola nya secara otomatis menggunakan tools.
+
+nah tools yang dimaksud dalam data orchestration ialah workflow orchestration,yang menjalankan tugas secara otomatis.
+
+What are the types of orchestration? 
+
+The orchestration process involves executing a set of tasks or activities in a specific order within a system to control the flow of data or work. 
+
+There are several types of orchestration, including:
+
+- Workflow orchestration
+
+- Data orchestration
+
+- Application orchestration
+
+- Infrastructure orchestration

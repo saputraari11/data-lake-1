@@ -1,0 +1,78 @@
+flow itu merupakan basis dari semua workflow prefect
+jadi flow itu tugas nya membungkus sekumpulan function atau main function ke dalam sebuah workflow,nanti nya flow akan dijalanin dan complete
+
+All Prefect workflows are defined within the context of a flow. 
+
+Every Prefect workflow must contain at least one flow function that serves as the entrypoint for execution of the flow.
+
+task is a function that does one thing 
+
+flow is a function that contain several function and executing it.
+
+flow in ingestion.py 
+
+flow with new_ingestion run task => extract data,transform data,load data 
+
+why should we use task? taks is ideal for debugging of each unit from code inside of a flow.
+
+by using task,we can levearge to run your tasks sequentially,concurrently or take advantage of pararel or distrubuted execution libraries such as dask or ray.
+
+by using task,we can know where our code stucked at the log.
+
+jadi tugas dari task adalah menghandle function supaya tahu dari proses function tersebut dari awal eksekusi function nya sampe selesai eksekusi function.
+
+subflow adalah sekumpulan flow yang di bungkus dalam satu flow dan dijalankan tergantung task runner nya.
+
+subflow itu kumpulan dari banyak tugas dan ujungnya jadi satu flow.
+
+setiap subflow itu punya task runner sendiri-sendiri.
+
+when to use task? we use task for observability and run tasks concurrently or in pararel.
+
+when to use subflow? group similiar flow,different task runner for different subflows and deploy a subflow that different on parameter,schedule and environment.
+
+a development is a server-side concept that encapsulates a flow allowing it to be triggered by api.
+
+jadi development itu wrap up workflow yang telah kita buat menjadi sebuah aplikasi yang bisa di akses melalui api.
+
+a development menyimpan metadata yang berisi nama,Infrastructure,work Queue,parameter,schedule,entrypoint dan storage.
+
+ketika deploying, kode kita disimpan pada specific storage bahkan aplikasi kita dijalankan melalui prefect api.
+
+jadi ibaratnya specific storage itu repository code nya,aplikasi kita dapat kode dari agent yang pull code dari storage dan kemudian dijalankan pada Infrastructure.
+
+why development?
+
+turn a flow into an api,jadi disini kita ingin mengakses flow kita melalui api.
+specific Infrastructure,jadi kita mendeploy aplikasi kita ke Infrastructure agar bisa aplikasi kita jalan.
+specific storage,jadi kita dapat menyimpan code kita di penyimpanan khusus contohnya gcp,s3,azure dan remote file system.
+specific custom names,parameters in the ui,jadi kita bisa buat nama maupun parameter kita yang kita inginkan.
+schedule the flow run,jadi kita bisa menjadwalkan kapan flow kita jalan.
+retry flow,jadi kita dapat menjalankan flow yang gagal.
+
+how to create deploymenet?
+
+thera 2 ways to create it,through python object and through a cli 
+
+step for creating a deploymenet by a cli,
+
+1) create deploymenets.yaml
+2) uploads flow code to remote storage.
+3) create the deployment by applying the deployment definition.
+ 
+point 1) syntax untuk membuat yaml: prefect deployment build name_of_file_python:name_function_of_flow -n name_of_deployment,ex : prefect deployment build ingestion.py:main -n first-ingestion-prefect
+point 2) syntax untuk menjalankan yaml file atau membuat deployment: prefect deployment apply name_file_yaml
+
+what is work queues and agent? 
+
+work queues organizes deployments into queues for execution
+agent make sure the deploymenets in a specific work queue are executed.
+
+setiap deployment memiliki work queue masing masing,set up work queue nya di file deployment nya dan sebelum kita apply atau deploy sebaiknya check dulu file deployment.
+
+untuk menjalankan work queue kita perlu agent,jadi agent itu mengorganisir atau memberikan akses agar work queue dijalankan.
+
+bagaimana caranya jika ada task yang dilakukan berulang ulang tapi memiliki proses yang cukup lama?
+
+caranya ialah menyimpan proses yang lama ke dalam memory agar proses tersebut dapat diatasi dengan cepat.
+
